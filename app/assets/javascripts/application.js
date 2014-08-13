@@ -11,6 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require underscore
+//= require backbone
+//= require marionette
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require_tree .
