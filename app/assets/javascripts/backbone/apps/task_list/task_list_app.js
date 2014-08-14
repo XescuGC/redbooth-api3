@@ -1,4 +1,4 @@
-RB.module('TaksListApp', function(TaskListApp, App, Backbone, Marionete, $, _){
+RB.module('TaskListApp', function(TaskListApp, App, Backbone, Marionete, $, _){
   var API;
 
   TaskListApp.Router = Marionette.AppRouter.extend({
@@ -9,7 +9,7 @@ RB.module('TaksListApp', function(TaskListApp, App, Backbone, Marionete, $, _){
 
   API = {
     index: function() {
-      return new TaksListApp.Index.Controller();
+      return new TaskListApp.Index.Controller();
     }
   }
 
