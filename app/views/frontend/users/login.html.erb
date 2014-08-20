@@ -1,4 +1,4 @@
 <center>
   <h2>Login</h2>
-  <%= link_to 'Login with Redbooth', '#', class: 'btn btn-danger' %>
+  <%= link_to 'Login with Redbooth', "https://redbooth.com/oauth2/authorize?client_id=#{Redbooth.credentials.client_id}&redirect_uri=#{Redbooth.credentials.redirect_uri}&response_type=code", class: 'btn btn-danger' %>
 </center>
