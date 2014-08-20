@@ -1,0 +1,9 @@
+development:
+  client_id: 'f6a5013d43650bb6ee54e2436a9eb90bbf8e4c4159bd930dfbf80559eeb9dc5e'
+  client_secret: 'c4c4855be205c48e13ca8014dcc9167f879595f9e4ad5fc42130a7b966f4d9bd'
+  redirect_uri: 'http://localhost:3000/authentication/auth_code'
+
+production:
+  client_id: '29b8164683d388ce66b53e2743412af6e44c55618b0483643b76c6bcd95928e1'
+  client_secret: 'e0602ff268a9917a37e5c0878df313a898d8a12b4fa3ca58d748711012c1234e'
+  redirect_uri: 'http://redbooth-api3.herokuapp.com/authentication/auth_code'
