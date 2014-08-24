@@ -3,6 +3,8 @@ require 'redbooth/lib/rest/util/rest_object'
 require 'redbooth/lib/rest/auth/authentication'
 require 'redbooth/lib/rest/projects/projects'
 require 'redbooth/lib/rest/projects/project'
+require 'redbooth/lib/rest/tasks/tasks'
+require 'redbooth/lib/rest/tasks/task'
 
 module Redbooth
   class << self
