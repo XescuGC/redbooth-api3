@@ -1,4 +1,5 @@
 require 'redbooth/lib/credentials'
+require 'redbooth/lib/rest/util/rest_object'
 require 'redbooth/lib/rest/auth/authentication'
 
 module Redbooth
