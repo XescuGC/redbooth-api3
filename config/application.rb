@@ -28,5 +28,6 @@ module RedboothApi3
     # config.i18n.default_locale = :de
 
     config.autoload_paths += %W(#{config.root}/lib/redbooth)
+    config.autoload_paths += %W(#{config.root}/lib/redbooth_wrapper)
   end
 end
