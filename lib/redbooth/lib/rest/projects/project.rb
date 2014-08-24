@@ -1,6 +1,7 @@
 module Redbooth
   module Rest
     class Project
+      include Redbooth::Util::ToHash
       attr_accessor :type, :created_at, :updated_at, :id, :permalink, :organization_id, :archived, :name, :description, :start_date, :end_date, :tracks_time, :public, :publish_pages, :settings, :deleted
       DATES = [:created_at, :updated_at, :start_date, :end_date]
 
@@ -13,7 +14,7 @@ module Redbooth
             send("#{k}=",v)
           end
         end
-        self
+        return self
       end
 
       def tasks
