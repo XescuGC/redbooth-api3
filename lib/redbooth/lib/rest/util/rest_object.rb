@@ -9,6 +9,7 @@ module Redbooth
         class << self
           [:get, :put, :post, :delete].each do |method|
             define_method method do |path, options|
+              p _full_url(path, options[:query])
               resource = RestClient::Resource.new(_full_url(path, options[:query]))
               result = resource.send(method, _headers) do |response, request, result, &block|
                 response
@@ -18,7 +19,9 @@ module Redbooth
           end
 
           def _full_url(path, query)
-            return (DEFAULTS[:origin] + path).tap{|url| url + '?' + query.to_query if query}
+            url = DEFAULTS[:origin] + path
+            url = url + '?' + query.to_query if query
+            return url
           end
 
           def _headers
