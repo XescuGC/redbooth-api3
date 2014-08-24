@@ -18,7 +18,7 @@ module Redbooth
           end
 
           def _full_url(path, query)
-            return DEFAULTS[:origin] + path + '?' + query.to_query
+            return (DEFAULTS[:origin] + path).tap{|url| url + '?' + query.to_query if query}
           end
 
           def _headers
