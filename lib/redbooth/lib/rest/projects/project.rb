@@ -17,11 +17,7 @@ module Redbooth
       end
 
       def tasks
-        p Util::RestObject::DEFAULTS
-        Tasks.all
-      end
-
-      def task_lists
+        return Tasks.all(query: {project_id: self.id})
       end
     end
   end
