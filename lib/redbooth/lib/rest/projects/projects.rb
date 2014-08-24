@@ -10,11 +10,7 @@ module Redbooth
         end
 
         def _list_of_projects(projects)
-          result = []
-          projects.each do |project|
-            result << Project.new(project)
-          end
-          return result
+          return projects.map{ |pr| Project.new(pr) }
         end
       end
 
