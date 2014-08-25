@@ -18,8 +18,8 @@ this.RB = (function(Backbone, Marionette) {
   App.rootRoute = '';
 
   App.origin = (function() {
-    return window.location.origin
-  })
+    return window.location.origin + '/api/v1';
+  })();
 
   App.on('initialize:after', function() {
     this.startHistory();
@@ -27,7 +27,7 @@ this.RB = (function(Backbone, Marionette) {
     if (!this.getCurrentRoute()) {
       this.navigate(route, {trigger: true})
     }
-  })
+  });
 
   return App;
 })(Backbone, Marionette);
