@@ -2,16 +2,25 @@ RB.module('ProjectApp.Index', function(Index, App, Backbone, Marionette, $, _) {
   Index.Controller = App.Controllers.Application.extend({
     initialize: function() {
       var that = this;
-      var indexView = this.getIndexView();
+      this.layout = this.getLayoutView();
       var promiseProjects = App.request('project:entities');
       $.when(promiseProjects).done(function(projects) {
-        console.log(projects);
-        that.show(indexView);
+        var projectsList = that.getProjectsListView(projects);
+        that.listenTo(that.layout, 'show', function() {
+          that.show(projectsList, {region: that.layout.projectsListRegion});
+        })
+        that.show(that.layout);
       })
     },
 
-    getIndexView: function() {
-      return new Index.Project
+    getLayoutView: function() {
+      return new Index.Layout
+    },
+
+    getProjectsListView: function(projects) {
+      return new Index.ProjectsList({
+        collection: projects
+      })
     }
   })
 })

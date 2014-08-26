@@ -1,1 +1,77 @@
-%h1 Hello World Projects
+.panel-heading
+  %h4.panel-title
+    %a(data-toggle='collapse' data-parent='#projects-accordion' href="##{@id}")
+      .row
+        .col-md-3
+          = @name
+        .col-md-9
+          .progress
+            - # .progress-bar.progress-bar-success.pull-right(role='progressbar' aria-valuenow="#{@getPercentOfTotal(@resolved_tasks)}" aria-valuemin='0' aria-valuemax='100' style="width: #{@getPercentOfTotal(@resolved_tasks)}%")
+            .progress-bar.progress-bar-success.pull-right(role='progressbar' data-transitiongoal="#{@resolved_tasks}" aria-valuemax="#{@total_tasks}")
+              - # "#{@resolved_tasks} (#{@getPercentOfTotal(@resolved_tasks)}%)"
+
+%div.panel-collapse.collapse(id="#{@id}")
+  .panel-body
+    %h3 Description
+    != @description
+    %h3 Task Overview
+    .row
+      .total-tasks
+        .col-md-3
+          %i.fa.fa-asterisk
+          Total Tasks
+        .col-md-9
+          .progress
+            .progress-bar.pull-right(role='progressbar' aria-valuenow="#{@getPercentOfTotal(@total_tasks)}" aria-valuemin='0' aria-valuemax='100' style="width: #{@getPercentOfTotal(@total_tasks)}%")
+              = "#{@total_tasks} (#{@getPercentOfTotal(@total_tasks)}%)"
+
+    .row
+      .total-tasks
+        .col-md-3
+          %i.fa.fa-check
+          Resolved Tasks
+        .col-md-9
+          .progress
+            .progress-bar.progress-bar-success.pull-right(role='progressbar' aria-valuenow="#{@getPercentOfTotal(@resolved_tasks)}" aria-valuemin='0' aria-valuemax='100' style="width: #{@getPercentOfTotal(@resolved_tasks)}%")
+              = "#{@resolved_tasks} (#{@getPercentOfTotal(@resolved_tasks)}%)"
+
+    .row
+      .total-tasks
+        .col-md-3
+          %i.fa.fa-folder-open
+          Open Tasks
+        .col-md-9
+          .progress
+            .progress-bar.progress-bar-violet.pull-right(role='progressbar' aria-valuenow="#{@getPercentOfTotal(@open_tasks)}" aria-valuemin='0' aria-valuemax='100' style="width: #{@getPercentOfTotal(@open_tasks)}%")
+              = "#{@open_tasks} (#{@getPercentOfTotal(@open_tasks)}%)"
+
+    .row
+      .total-tasks
+        .col-md-3
+          %i.fa.fa-envelope
+          New Tasks
+        .col-md-9
+          .progress
+            .progress-bar.progress-bar-info.pull-right(role='progressbar' aria-valuenow="#{@getPercentOfTotal(@new_tasks)}" aria-valuemin='0' aria-valuemax='100' style="width: #{@getPercentOfTotal(@new_tasks)}%")
+              = "#{@new_tasks} (#{@getPercentOfTotal(@new_tasks)}%)"
+
+    .row
+      .total-tasks
+        .col-md-3
+          %i.fa.fa-minus-circle
+          Hold Tasks
+        .col-md-9
+          .progress
+            .progress-bar.progress-bar-warning.pull-right(role='progressbar' aria-valuenow="#{@getPercentOfTotal(@hold_tasks)}" aria-valuemin='0' aria-valuemax='100' style="width: #{@getPercentOfTotal(@hold_tasks)}%")
+              = "#{@hold_tasks} (#{@getPercentOfTotal(@hold_tasks)}%)"
+
+    .row
+      .total-tasks
+        .col-md-3
+          %i.fa.fa-ban
+          Rejected Tasks
+        .col-md-9
+          .progress
+            .progress-bar.progress-bar-danger.pull-right(role='progressbar' aria-valuenow="#{@getPercentOfTotal(@rejected_tasks)}" aria-valuemin='0' aria-valuemax='100' style="width: #{@getPercentOfTotal(@rejected_tasks)}%")
+              = "#{@rejected_tasks} (#{@getPercentOfTotal(@rejected_tasks)}%)"
+
