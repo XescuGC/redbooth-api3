@@ -17,6 +17,7 @@
 //= require marionette
 //= require hamlcoffee
 //= require bootstrap-sprockets
+//= require bootstrap-progressbar
 
 //= require backbone/app
 
