@@ -6,7 +6,6 @@ RB.module('HeaderApp.Show', function(Show, App, Backbone, Marionette, $, _) {
     },
 
     getShowView: function() {
-      console.log(Show.Header);
       return new Show.Header;
     }
   });
