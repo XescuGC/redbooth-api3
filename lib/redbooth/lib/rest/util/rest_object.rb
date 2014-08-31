@@ -7,13 +7,13 @@ module Redbooth
           auth:   nil
         }
         class << self
-          [:get, :put, :post, :delete].each do |method|
+          [:get, :delete].each do |method|
             define_method method do |path, options|
               resource = RestClient::Resource.new(_full_url(path, options[:query]))
               result = resource.send(method, _headers) do |response, request, result, &block|
                 response
               end
-              return JSON.parse(result, symbolize_names: true)
+              return JSON.parse(result, symbolize_names: true) rescue true
             end
           end
 

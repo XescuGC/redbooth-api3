@@ -6,6 +6,10 @@ module RedboothWrapper
         return projects.map{ |pr| _create_project(pr) }
       end
 
+      def destroy(id)
+        return Redbooth::Rest::Projects.delete(id);
+      end
+
       def _create_project(project)
         tasks = project.tasks
         

@@ -12,6 +12,11 @@ module Redbooth
         def _list_of_projects(projects)
           return projects.map{ |pr| Project.new(pr) }
         end
+
+        def delete(id, options={})
+          path = PATH + '/' + id
+          result = super(path, options)
+        end
       end
 
     end
