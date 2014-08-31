@@ -12,9 +12,9 @@ RB.module('Entities', function(Entities, App, Backbone, Marionette, $, _){
   API = {
     getProjects: function() {
       var defer = $.Deferred();
-      var presentations = new Entities.ProjectsCollection();
+      var projects = new Entities.ProjectsCollection();
 
-      presentations.fetch({
+      projects.fetch({
         success: function(data) {
           defer.resolve(data);
         }
