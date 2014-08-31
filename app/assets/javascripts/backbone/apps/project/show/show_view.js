@@ -10,7 +10,6 @@ RB.module('ProjectApp.Show', function(Show, App, Backbone, Marionette, $, _) {
     },
     timesClicked: 0,
     tryDelete: function() {
-      console.log(this.timesClicked);
       this.timesClicked += 1;
       if (this.timesClicked === 2) {
         this.triggerMethod('project:delete');
@@ -20,6 +19,9 @@ RB.module('ProjectApp.Show', function(Show, App, Backbone, Marionette, $, _) {
     },
     openModal: function() {
       this.ui.modal.modal();
+    },
+    closeModal: function() {
+      this.ui.modal.modal('hide');
     }
   })
 })
