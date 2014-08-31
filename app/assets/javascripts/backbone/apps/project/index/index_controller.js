@@ -5,12 +5,16 @@ RB.module('ProjectApp.Index', function(Index, App, Backbone, Marionette, $, _) {
       this.layout = this.getLayoutView();
       var promiseProjects = App.request('project:entities');
       $.when(promiseProjects).done(function(projects) {
-        var projectsList = that.getProjectsListView(projects);
         that.listenTo(that.layout, 'show', function() {
-          that.show(projectsList, {region: that.layout.projectsListRegion});
+          that.projectListRegion(projects);
         })
         that.show(that.layout);
       })
+    },
+
+    projectListRegion: function(projects) {
+      var projectsList = this.getProjectsListView(projects);
+      this.show(projectsList, {region: this.layout.projectsListRegion});
     },
 
     getLayoutView: function() {
