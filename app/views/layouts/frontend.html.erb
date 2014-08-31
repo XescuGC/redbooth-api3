@@ -10,6 +10,15 @@
 </head>
 <body>
   <div class='container'>
+    <div class='flash-container'>
+      <% flash.each do |name, msg| %>
+        <div class="alert alert-<%= name %>">
+          <%= link_to 'x', '#', class: 'close', 'data-dismiss' => 'alert' %>
+          <%= flash[name.to_sym] %>
+        </div>
+      <% end %>
+    </div>
+
     <%= yield %>
   </div>
 </body>
