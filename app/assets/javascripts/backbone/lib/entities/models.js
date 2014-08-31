@@ -2,8 +2,8 @@ RB.module("Entities", function(Entities, App, Backbone, Marionette, $, _) {
   Backbone.Model.prototype.urlPath = Backbone.Model.prototype.url;
 
   Entities.Model = Backbone.Model.extend({
-    url: function() {
-      return App.origin + this.urlPath();
+    urlRoot: function() {
+      return App.origin + this.urlPath;
     },
     save: function(data, options) {
       options || (options = {});

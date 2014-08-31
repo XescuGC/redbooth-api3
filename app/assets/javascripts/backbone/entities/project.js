@@ -2,6 +2,7 @@ RB.module('Entities', function(Entities, App, Backbone, Marionette, $, _){
   var API;
 
   Entities.Project = Entities.Model.extend({
+    urlPath: '/projects'
   });
 
   Entities.ProjectsCollection = Entities.Collection.extend({
