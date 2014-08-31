@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1, defaults: {format: 'json'} do
-      resources :projects, only: [:index]
+      resources :projects, only: [:index, :destroy]
     end
   end
   scope module: :frontend do
