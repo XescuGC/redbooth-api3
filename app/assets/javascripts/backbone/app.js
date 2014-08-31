@@ -22,6 +22,12 @@ this.RB = (function(Backbone, Marionette) {
   })();
 
   App.on('initialize:after', function() {
+    this.addRegions({
+      dialogRegion: {
+        selector:   '#dialog-region',
+        regionType: App.Regions.Dialog
+      }
+    })
     this.startHistory();
     var route = App.rootRoute;
     if (!this.getCurrentRoute()) {
