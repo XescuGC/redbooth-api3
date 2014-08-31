@@ -5,7 +5,7 @@ RB.module('Regions', function(Regions, App, Backbone, Marioneter, $, _){
 
       this.current_view = view;
 
-      return this.openDialog(options);
+      return this.openDialog();
     },
 
     setupBindings: function(view) {
@@ -19,7 +19,8 @@ RB.module('Regions', function(Regions, App, Backbone, Marioneter, $, _){
       this.$el.on('show.bs.modal',            function(){ console.log('open')  });
       this.$el.on('hide.bs.modal',            function(){ console.log('close') });
 
-      this.$el.modal();
+      console.log(this);
+      this.current_view.openModal()
 
       this.$el.on('hide.bs.modal', function(){
         that.close();

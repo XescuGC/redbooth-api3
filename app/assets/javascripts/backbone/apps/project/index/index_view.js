@@ -9,6 +9,12 @@ RB.module('ProjectApp.Index', function(Index, App, Backbone, Marionette, $, _) {
   Index.Project = App.Views.ItemView.extend({
     template: 'project/index/project',
     className: 'panel panel-default',
+    ui: {
+      'btnSeeMore'  : 'button.btn.see-more'
+    },
+    triggers: {
+      'click @ui.btnSeeMore'  : 'see:more'
+    },
     templateHelpers: {
       getPercentOfTotal: function(value) {
         if (this.total_tasks === 0) {

@@ -76,5 +76,5 @@
               = "#{@rejected_tasks} (#{@getPercentOfTotal(@rejected_tasks)}%)"
     .row
       .center
-        .btn.btn-primary.see-more
+        %button.btn.btn-primary.see-more
           See More +

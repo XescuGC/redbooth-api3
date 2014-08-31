@@ -14,6 +14,9 @@ RB.module('ProjectApp.Index', function(Index, App, Backbone, Marionette, $, _) {
 
     projectListRegion: function(projects) {
       var projectsList = this.getProjectsListView(projects);
+      projectsList.on('itemview:see:more', function(child, args) {
+        App.vent.trigger('project:show', child.model);
+      });
       this.show(projectsList, {region: this.layout.projectsListRegion});
     },
 
