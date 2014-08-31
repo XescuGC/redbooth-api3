@@ -6,8 +6,8 @@
           = @name
         .col-md-9
           .progress
-            - # .progress-bar.progress-bar-success.pull-right(role='progressbar' aria-valuenow="#{@getPercentOfTotal(@resolved_tasks)}" aria-valuemin='0' aria-valuemax='100' style="width: #{@getPercentOfTotal(@resolved_tasks)}%")
-            .progress-bar.progress-bar-success.pull-right(role='progressbar' data-transitiongoal="#{@resolved_tasks}" aria-valuemax="#{@total_tasks}")
+            - # .progress-bar.progress-bar-success(role='progressbar' aria-valuenow="#{@getPercentOfTotal(@resolved_tasks)}" aria-valuemin='0' aria-valuemax='100' style="width: #{@getPercentOfTotal(@resolved_tasks)}%")
+            .progress-bar.progress-bar-success(role='progressbar' data-transitiongoal="#{@resolved_tasks}" aria-valuemax="#{@total_tasks}")
               - # "#{@resolved_tasks} (#{@getPercentOfTotal(@resolved_tasks)}%)"
 
 %div.panel-collapse.collapse(id="#{@id}")
@@ -22,7 +22,7 @@
           Total Tasks
         .col-md-9
           .progress
-            .progress-bar.pull-right(role='progressbar' aria-valuenow="#{@getPercentOfTotal(@total_tasks)}" aria-valuemin='0' aria-valuemax='100' style="width: #{@getPercentOfTotal(@total_tasks)}%")
+            .progress-bar(role='progressbar' aria-valuenow="#{@getPercentOfTotal(@total_tasks)}" aria-valuemin='0' aria-valuemax='100' style="width: #{@getPercentOfTotal(@total_tasks)}%")
               = "#{@total_tasks} (#{@getPercentOfTotal(@total_tasks)}%)"
 
     .row
@@ -32,7 +32,7 @@
           Resolved Tasks
         .col-md-9
           .progress
-            .progress-bar.progress-bar-success.pull-right(role='progressbar' aria-valuenow="#{@getPercentOfTotal(@resolved_tasks)}" aria-valuemin='0' aria-valuemax='100' style="width: #{@getPercentOfTotal(@resolved_tasks)}%")
+            .progress-bar.progress-bar-success(role='progressbar' aria-valuenow="#{@getPercentOfTotal(@resolved_tasks)}" aria-valuemin='0' aria-valuemax='100' style="width: #{@getPercentOfTotal(@resolved_tasks)}%")
               = "#{@resolved_tasks} (#{@getPercentOfTotal(@resolved_tasks)}%)"
 
     .row
@@ -42,7 +42,7 @@
           Open Tasks
         .col-md-9
           .progress
-            .progress-bar.progress-bar-violet.pull-right(role='progressbar' aria-valuenow="#{@getPercentOfTotal(@open_tasks)}" aria-valuemin='0' aria-valuemax='100' style="width: #{@getPercentOfTotal(@open_tasks)}%")
+            .progress-bar.progress-bar-violet(role='progressbar' aria-valuenow="#{@getPercentOfTotal(@open_tasks)}" aria-valuemin='0' aria-valuemax='100' style="width: #{@getPercentOfTotal(@open_tasks)}%")
               = "#{@open_tasks} (#{@getPercentOfTotal(@open_tasks)}%)"
 
     .row
@@ -52,7 +52,7 @@
           New Tasks
         .col-md-9
           .progress
-            .progress-bar.progress-bar-info.pull-right(role='progressbar' aria-valuenow="#{@getPercentOfTotal(@new_tasks)}" aria-valuemin='0' aria-valuemax='100' style="width: #{@getPercentOfTotal(@new_tasks)}%")
+            .progress-bar.progress-bar-info(role='progressbar' aria-valuenow="#{@getPercentOfTotal(@new_tasks)}" aria-valuemin='0' aria-valuemax='100' style="width: #{@getPercentOfTotal(@new_tasks)}%")
               = "#{@new_tasks} (#{@getPercentOfTotal(@new_tasks)}%)"
 
     .row
@@ -62,7 +62,7 @@
           Hold Tasks
         .col-md-9
           .progress
-            .progress-bar.progress-bar-warning.pull-right(role='progressbar' aria-valuenow="#{@getPercentOfTotal(@hold_tasks)}" aria-valuemin='0' aria-valuemax='100' style="width: #{@getPercentOfTotal(@hold_tasks)}%")
+            .progress-bar.progress-bar-warning(role='progressbar' aria-valuenow="#{@getPercentOfTotal(@hold_tasks)}" aria-valuemin='0' aria-valuemax='100' style="width: #{@getPercentOfTotal(@hold_tasks)}%")
               = "#{@hold_tasks} (#{@getPercentOfTotal(@hold_tasks)}%)"
 
     .row
@@ -72,6 +72,6 @@
           Rejected Tasks
         .col-md-9
           .progress
-            .progress-bar.progress-bar-danger.pull-right(role='progressbar' aria-valuenow="#{@getPercentOfTotal(@rejected_tasks)}" aria-valuemin='0' aria-valuemax='100' style="width: #{@getPercentOfTotal(@rejected_tasks)}%")
+            .progress-bar.progress-bar-danger(role='progressbar' aria-valuenow="#{@getPercentOfTotal(@rejected_tasks)}" aria-valuemin='0' aria-valuemax='100' style="width: #{@getPercentOfTotal(@rejected_tasks)}%")
               = "#{@rejected_tasks} (#{@getPercentOfTotal(@rejected_tasks)}%)"
 
