@@ -74,4 +74,7 @@
           .progress
             .progress-bar.progress-bar-danger(role='progressbar' aria-valuenow="#{@getPercentOfTotal(@rejected_tasks)}" aria-valuemin='0' aria-valuemax='100' style="width: #{@getPercentOfTotal(@rejected_tasks)}%")
               = "#{@rejected_tasks} (#{@getPercentOfTotal(@rejected_tasks)}%)"
-
+    .row
+      .center
+        .btn.btn-primary.see-more
+          See More +

@@ -25,13 +25,7 @@ RB.module('ProjectApp.Index', function(Index, App, Backbone, Marionette, $, _) {
         percent_format: function(p) {
           return p;
         },
-        use_percentage: false,
-        // amount_format: function(p, max, min) {
-        //   return p;
-        // },
-        done: function() {
-          console.log(that.$el.find('.panel-title .progress-bar'));
-        }
+        use_percentage: false
       })
     }
   });

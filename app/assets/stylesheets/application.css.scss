@@ -21,6 +21,13 @@
 body{
   background-color: #F9F9F9;
 }
+.center {
+  // margin: 0 auto;
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 .progress-bar-violet {
   background-color: #7C4DBA;
 }
