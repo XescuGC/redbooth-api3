@@ -10,26 +10,36 @@ RB.module('ProjectApp.Index', function(Index, App, Backbone, Marionette, $, _) {
     template: 'project/index/project',
     className: 'panel panel-default',
     ui: {
-      'btnSeeMore'  : 'button.btn.see-more'
+      'btnSeeMore'  : 'button.btn.see-more',
+      'panelTitle' : '.panel-title'
+    },
+    events: {
+      'click @ui.panelTitle' : 'progressBars'
     },
     triggers: {
       'click @ui.btnSeeMore'  : 'see:more'
     },
     templateHelpers: {
-      getPercentOfTotal: function(value) {
-        if (this.total_tasks === 0) {
-          return 0
-        } else {
-          return ((value/this.total_tasks) * 100).toFixed(1)
-        }
+    },
+    getPercentOfTotal: function(value) {
+      if (this.total_tasks === 0) {
+        return 0
+      } else {
+        return ((value/this.model.get('total_tasks')) * 100).toFixed(1)
       }
     },
     onRender: function() {
+      this.fillProgressBars('.panel-title .progress .progress-bar');
+    },
+    progressBars: function() {
+      this.fillProgressBars('.panel-body .progress .progress-bar');
+    },
+    fillProgressBars: function(selector) {
       var that = this;
-      that.$el.find('.panel-title .progress .progress-bar').progressbar({
+      this.$el.find(selector).progressbar({
         display_text: 'fill',
-        percent_format: function(p) {
-          return p;
+        amount_format: function(p, t) {
+          return p + ' ' + '(' + that.getPercentOfTotal(p)+ '%)';
         },
         use_percentage: false
       })
