@@ -8,10 +8,19 @@
         %h4#myModalLabel.modal-title
           = @name
       .modal-body
-        %p People in the Projet
-        %p Private Tasks
-        %p Urgent Tasks
-        %p Notes
+        .row
+          .col-md-6
+            %p Private Tasks
+          .col-md-6
+            .pull-right
+              = @private_tasks
+
+        .row
+          .col-md-6
+            %p Urgent Tasks
+          .col-md-6
+            .pull-right
+              = @urgent_tasks
         .center
           %button.btn.btn-danger.btn-block#project-delete
             %i.fa.fa-exclamation-triangle
