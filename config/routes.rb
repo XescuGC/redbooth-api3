@@ -2,11 +2,15 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1, defaults: {format: 'json'} do
       resources :projects, only: [:index, :destroy]
+      resource :authentication, controller: 'authentication', only: [] do
+        put :refresh
+      end
     end
   end
   scope module: :frontend do
     resources :authentication, only: [] do
       collection do
+        get :refresh
         get :auth_code
       end
     end

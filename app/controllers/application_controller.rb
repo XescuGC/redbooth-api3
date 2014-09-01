@@ -8,5 +8,6 @@ class ApplicationController < ActionController::Base
   def set_auth
     Rails.logger.warn("COOKIE: #{cookies.signed[:rb_t]}")
     Redbooth::Rest::Util::RestObject::DEFAULTS[:auth] = cookies.signed[:rb_t]
+    Redbooth::Rest::Authentication::DEFAULTS[:refresh] = cookies.signed[:rb_r]
   end
 end
