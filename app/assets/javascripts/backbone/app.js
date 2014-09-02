@@ -9,6 +9,7 @@ this.RB = (function(Backbone, Marionette) {
 
   App.addInitializer(function () {
     App.module('HeaderApp').start();
+    App.module('FooterApp').start();
   });
 
   App.reqres.setHandler('default:region', function() {

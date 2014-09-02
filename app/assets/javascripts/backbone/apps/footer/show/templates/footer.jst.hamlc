@@ -1,0 +1,15 @@
+.navbar.navbar-default.navbar-fixed-bottom
+  .container
+    .navbar-text.pull-left
+      Site Build by Francesc Gil
+    .pull-right
+      .btn-group
+        .btn.btn-default
+          %a(href='https://twitter.com/XescuGC' target='_blank')
+            %i.fa.fa-twitter
+        .btn.btn-default
+          %a(href='https://github.com/XescuGC' target='_blank')
+            %i.fa.fa-github-alt
+        .btn.btn-default
+          %a(href='http://es.linkedin.com/in/francescgilc' target='_blank')
+            %i.fa.fa-linkedin
