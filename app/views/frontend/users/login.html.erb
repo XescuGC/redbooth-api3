@@ -1,6 +1,6 @@
 <div class='row'>
   <div class='col-md-12'>
-    <div class='login'>
+    <div class='login well'>
       <p>Login</p>
       <%= link_to 'Login with Redbooth', "https://redbooth.com/oauth2/authorize?client_id=#{Redbooth.credentials.client_id}&redirect_uri=#{Redbooth.credentials.redirect_uri}&response_type=code", class: 'btn btn-danger' %>
     </div>
